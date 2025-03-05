@@ -1,0 +1,50 @@
+# Compiled class files
+*.class
+*.log
+*.out
+
+# Maven target folder
+target/
+!target/cucumber-reports/
+
+# IntelliJ IDEA files
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# Eclipse files
+.settings/
+.project
+.classpath
+
+# VS Code files
+.vscode/
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# Logs and Reports
+logs/
+*.tmp
+*.swp
+*.swo
+test-output/
+cucumber-reports/
+surefire-reports/
+extent-reports/
+
+# Selenium drivers (if manually added)
+chromedriver
+chromedriver.exe
+geckodriver
+geckodriver.exe
+
+# Environment files
+.env
+*.properties
+
+# Node modules (if using JavaScript in the framework)
+node_modules/
