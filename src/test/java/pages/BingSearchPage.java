@@ -16,7 +16,6 @@ public class BingSearchPage {
 
     public void enterSearchKeyword(String keyword) {
         WebElement searchInput = driver.findElement(searchBox);
-        searchInput.sendKeys(keyword);
-        searchInput.sendKeys(Keys.RETURN, Keys.ENTER);
+        searchInput.sendKeys(keyword, Keys.RETURN);
     }
 }

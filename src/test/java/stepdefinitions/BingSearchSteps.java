@@ -1,38 +1,29 @@
 package stepdefinitions;
 
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import pages.BingSearchPage;
-import java.net.MalformedURLException;
-import java.net.URL;
+import utilities.DriverFactory;
 
 import static org.testng.Assert.assertTrue;
 
 public class BingSearchSteps {
-    private static WebDriver driver;
+    public static final String BING_URL = "https://www.bing.com/search?q=test";
+    protected WebDriver driver;
     private BingSearchPage bingSearchPage;
 
+    @Before
+    public void init() throws Exception {
+        driver = DriverFactory.getDriver();
+    }
+
     @Given("I open the Bing homepage")
-    public void i_open_google_homepage() throws MalformedURLException {
-        String useGrid = System.getProperty("useGrid", "false");
-        if (useGrid.equalsIgnoreCase("true")) {
-            driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), new DesiredCapabilities());
-        } else {
-            // Automatically downloads and sets up the latest ChromeDriver
-            ChromeOptions options = new ChromeOptions();
-            options.addArguments("--remote-debugging-port=9222");
-            options.addArguments("--remote-allow-origins=*");
-            WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver(options);
-        }
-        driver.get("https://www.bing.com");
+    public void i_open_google_homepage() {
+        driver.get(BING_URL);
         bingSearchPage = new BingSearchPage(driver);
     }
 
@@ -44,6 +35,12 @@ public class BingSearchSteps {
     @Then("I should see results related to {string}")
     public void i_should_see_results_related_to(String keyword) {
         assertTrue(driver.getTitle().contains(keyword));
-        driver.quit();
+    }
+
+    @After
+    public void afterTest() {
+        if (driver != null) {
+            driver.quit();
+        }
     }
 }
