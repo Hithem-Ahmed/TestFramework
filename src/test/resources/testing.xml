@@ -6,4 +6,10 @@
             <class name="api.WeatherAPITest"/>
         </classes>
     </test>
+
+    <test name="API Tests">
+        <classes>
+
+        </classes>
+    </test>
 </suite>
