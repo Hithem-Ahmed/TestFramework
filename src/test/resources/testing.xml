@@ -3,12 +3,6 @@
     <test name="UI Tests">
         <classes>
             <class name="testrunners.TestRunner"/>
-
-        </classes>
-    </test>
-
-    <test name="API Tests">
-        <classes>
             <class name="api.WeatherAPITest"/>
         </classes>
     </test>
