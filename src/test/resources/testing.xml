@@ -1,13 +1,9 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-    <!-- Define parameters for WebDriver configuration -->
-    <parameter name="browser" value="chrome"/>  <!-- Options: chrome, firefox, edge -->
-    <parameter name="useGrid" value="false"/>    <!-- true for Selenium Grid, false for local execution -->
-    <parameter name="gridUrl" value="http://localhost:4444/wd/hub"/>  <!-- Grid URL if useGrid is true -->
-
     <test name="UI Tests">
         <classes>
             <class name="testrunners.TestRunner"/>
+
         </classes>
     </test>
 
