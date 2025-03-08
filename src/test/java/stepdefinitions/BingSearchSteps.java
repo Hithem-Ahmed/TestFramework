@@ -12,7 +12,7 @@ import utilities.DriverFactory;
 import static org.testng.Assert.assertTrue;
 
 public class BingSearchSteps {
-    public static final String BING_URL = "https://www.bing.com/search?q=test";
+    public static final String BING_URL = "https://www.bing.com/search?q=t";
     protected WebDriver driver;
     private BingSearchPage bingSearchPage;
 
