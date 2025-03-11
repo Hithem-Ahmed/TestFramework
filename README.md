@@ -1,4 +1,4 @@
-To run the tests
-mvn clean install
-mvn allure:report
+To run the tests <br>
+mvn clean install <br>
+mvn allure:report <br>
 mvn allure:serve
