@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Known Issue",
+    "description": "This test is failing due to a known bug.",
+    "matchedStatuses": ["failed"],
+    "traceRegex": ".*KnownIssueException.*"
+  },
+  {
+    "name": "Flaky Test",
+    "description": "This test fails intermittently.",
+    "matchedStatuses": ["broken", "failed"],
+    "traceRegex": ".*FlakyTestException.*"
+  },
+  {
+    "name": "Performance Issue",
+    "description": "This test is slow and needs optimization.",
+    "matchedStatuses": ["passed"],
+    "messageRegex": ".*Performance.*"
+  }
+]

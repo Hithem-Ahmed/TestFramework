@@ -1,14 +1,18 @@
 package api;
 
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
 
 public class WeatherAPITest {
+
+    @Epic("API Automation")
+    @Feature("Weather API")
     @Test
     public void testWeatherAPI() {
         RestAssured.baseURI = "https://api.open-meteo.com/v1/forecast";
